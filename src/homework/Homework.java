@@ -64,10 +64,14 @@ public class Homework {
         int max = list.get(0);
         for (int i = 1; i < list.size(); i++) {
             int value = list.get(i);
-            if (value < min) min = value;
-            if (value > max) max = value;
+            if (value < min) {
+                min = value;
+            }
+            if (value > max) {
+                max = value;
+            }
         }
-        return new int[]{min, max};
+        return new int[] {min, max};
     }
 
     // 8. Удалите все числа, делящиеся на 2
@@ -92,11 +96,11 @@ public class Homework {
         return list;
     }
 
-    // 10. Найдите количество элементов, больше чем число N
-    public static int countGreaterThanN(List<Integer> list, int N) {
+    // 10. Найдите количество элементов, больше чем число n
+    public static int countGreaterThanN(List<Integer> list, int n) {
         int count = 0;
-        for (int n : list) {
-            if (n > N) {
+        for (int x : list) {
+            if (x > n) {
                 count++;
             }
         }
