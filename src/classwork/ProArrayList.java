@@ -20,19 +20,28 @@ public class ProArrayList {
         this.data[this.size++] = element;
     }
 
-    // TODO
+    // Возвращает количество элементов
     public int size() {
-        return 0;
+        return this.size;
     }
 
-    // TODO
+    // Добавляет элемент по индексу, сдвигая элементы справа от этого индекса на одну позицию правее
     public void add(int index, String element) {
-
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        provideCapacity();
+        System.arraycopy(data, index, data, index + 1, size - index);
+        data[index] = element;
+        size++;
     }
 
-    // TODO
+    // Возвращает элемент по индексу
     public String get(int index) {
-        return null;
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        return data[index];
     }
 
     @Override
